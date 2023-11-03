@@ -12,7 +12,6 @@ public class GetTitleMethod
 	driver.get("https://www.flipkart.com");
 	Thread.sleep(2000);
 	String titleofPage=driver.getTitle();
-	driver.close();
 	System.out.println(titleofPage);
   }
 }
