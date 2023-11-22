@@ -24,7 +24,7 @@ public class BlueStonee
 	WebElement frameElement = driver.findElement(By.id("fc_widget"));
 	//driver.switchTo().frame(6);
 	//driver.switchTo().frame("fc_widget");
-	driver.switchTo().frame("frameElement");
+	driver.switchTo().frame(frameElement);
 	
 	//click on chatbox
 	driver.findElement(By.id("chat-icon")).click();
