@@ -1,6 +1,6 @@
 package KeyWordDrivenFrameWork;
 
-import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
@@ -11,9 +11,9 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public class BaseTest extends Flib
 {
     static WebDriver driver;
-	public void openBrowser() throws FileNotFoundException
+	public void openBrowser() throws IOException
 	{
-		Flib flib = new Flib();
+		Flib flib = new Flib();  //read the data from property file
 		String browserValue=flib.readDataFromProperty("./src/main/resources/config.properties","Browser");
 	    String url = readDataFromProperty("./src/main/resources/config.properties","Url");
 		if(browserValue.equalsIgnoreCase("Chrome"))

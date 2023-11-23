@@ -1,7 +1,7 @@
 package KeyWordDrivenFrameWork;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Properties;
 
@@ -27,7 +27,7 @@ public class Flib
 	    //return data;
 	    
 	    String data=null;
-	    if(cell.getCellType()==cell.getCellType().STRING)
+	      if(cell.getCellType()==cell.getCellType().STRING)
 	    {
 	    	data=cell.getStringCellValue();
 	    }
@@ -38,19 +38,20 @@ public class Flib
 	    return data;
 	} 
 	
-	public void writeDataToExcel(String excelPath,String sheetName,int rowCount,int cellCount) throws EncryptedDocumentException, IOException
+	public void writeDataToExcel(String excelPath,String sheetName,int rowCount,int cellCount,int data) throws EncryptedDocumentException, IOException
 	{
 		FileInputStream fis = new FileInputStream(excelPath);
 		Workbook wb = WorkbookFactory.create(fis);
 		Sheet sheet = wb.getSheet(sheetName);
 		Row row = sheet.createRow(rowCount);
 		Cell cell = row.createCell(cellCount);
-		cell.setCallValue(data);
+		cell.setCellValue(data);
 		
-		FileOutputStream foc
+		FileOutputStream fos=new FileOutputStream(excelPath);
+		wb.write(fos);
 		
 	}
-	public int rowCount(String excelPath,String sheetName,int rc) throws EncryptedDocumentException, IOException
+	public int rowCount(String excelPath,String sheetName) throws EncryptedDocumentException, IOException
 	{
 		FileInputStream fis = new FileInputStream(excelPath);
 		Workbook wb = WorkbookFactory.create(fis);
@@ -59,13 +60,15 @@ public class Flib
 		return rc;
 	}
 	
-	public void readDataFromProperty(String propPath,String key) throws FileNotFoundException
+	public String readDataFromProperty(String propPath,String key) throws IOException
 	{
-		Object fis = new FileInputStream(propPath);
+		FileInputStream fis = new FileInputStream(propPath);
 		
 		Properties prop = new Properties();
 		prop.load(fis);
-		String data=
+		String data=prop.getProperty(key);
+		System.out.println(data);
+		return data;
 		
 	}
 	
