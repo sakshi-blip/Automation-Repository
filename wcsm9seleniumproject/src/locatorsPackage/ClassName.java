@@ -9,7 +9,7 @@ public class ClassName
 {
   public static void main(String[] args) 
   {
-	 WebDriver driver=new ChromeDriver();
+	 ChromeDriver driver = new ChromeDriver();
 	 driver.get("https://www.google.com/");
 	 driver.switchTo().activeElement().sendKeys("joey tribbiani",Keys.ENTER);	 
 	 driver.findElement(By.className("lNPNe")).click();

@@ -12,6 +12,6 @@ public class LinkTextLocator
 	    driver.manage().window().maximize();
 	    driver.get("file:///C:/Users/DELL/Desktop/wcsm9/link.html");
 	    //it will work only for complete link text
-	    driver.findElement(By.linkText("slenium")).click();	    
+	    driver.findElement(By.linkText("sleniumLink")).click();	    
   }
 }

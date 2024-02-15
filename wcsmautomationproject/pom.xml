@@ -34,5 +34,10 @@
 </dependency>
 
 
+  	<dependency>
+  		<groupId>com.ActiTime</groupId>
+  		<artifactId>TimeSheetManagmentToolProject</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
   </dependencies>
 </project>

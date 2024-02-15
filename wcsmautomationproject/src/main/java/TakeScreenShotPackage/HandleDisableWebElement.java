@@ -16,7 +16,8 @@ public class HandleDisableWebElement
 	 driver.manage().window().maximize();
 	 driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 	 driver.get("https://demoapps.qspiders.com/");
-	 
+	 //click on quick start
+	 driver.findElement(By.xpath("//button[text()='Quick Start']")).click();
 	 driver.findElement(By.xpath("//p[text()='Disabled Mode']")).click();
 	 
 	 //explict type casting in javascript executer

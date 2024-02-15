@@ -30,7 +30,6 @@ public class ScreenShotWay5
 	 File dest = new File("./Screenshots/Seleniums.jpg");
 	 
 	 //store the screnshot into dest
-	 Files.copy(src, dest);
-	 
+	 Files.copy(src, dest);	 
   }
 }
